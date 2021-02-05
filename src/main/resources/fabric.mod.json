@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "spectater",
+  "version": "${version}",
+  "name": "Spectater",
+  "description": "A simple Fabric mod that fixes a spectator bug.",
+  "authors": [
+    "The Lazurite Team"
+  ],
+  "contact": {
+    "homepage": "https://lazurite.dev",
+    "sources": "https://github.com/LazuriteMC/Spectater",
+    "issues": "https://github.com/LazuriteMC/Spectater/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/spectater/icon.png",
+  "environment": "client",
+  "mixins": [
+    "spectater.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.6.1",
+    "minecraft": ">=1.14.4"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/efCMR7U"
+      }
+    }
+  }
+}
