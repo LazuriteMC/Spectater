@@ -1,4 +1,4 @@
-package lazurite.spectater.mixin;
+package dev.lazurite.spectater.mixin;
 
 import net.minecraft.client.network.ClientPlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;

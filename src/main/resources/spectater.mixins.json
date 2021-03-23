@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "lazurite.spectater.mixin",
+  "package": "dev.lazurite.spectater.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
   ],
