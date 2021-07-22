@@ -2,12 +2,12 @@
   "required": true,
   "minVersion": "0.8",
   "package": "dev.lazurite.spectater.mixin",
-  "compatibilityLevel": "JAVA_8",
+  "compatibilityLevel": "JAVA_16",
   "mixins": [
   ],
   "client": [
     "ClientPlayerEntityMixin",
-    "IClientPlayerEntityMixin"
+    "access.IClientPlayerEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

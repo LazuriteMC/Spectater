@@ -15,17 +15,21 @@
   "license": "MIT",
   "icon": "assets/spectater/icon.png",
   "environment": "client",
+  "entrypoints": {
+    "client": [
+    ]
+  },
   "mixins": [
     "spectater.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.6.1",
-    "minecraft": ">=1.14.4"
+    "fabricloader": ">=0.11.3",
+    "minecraft": ">=1.17"
   },
   "custom": {
     "modmenu": {
       "links": {
-        "modmenu.discord": "https://discord.gg/efCMR7U"
+        "modmenu.discord": "https://discord.gg/NNPPHN7b3P"
       }
     }
   }

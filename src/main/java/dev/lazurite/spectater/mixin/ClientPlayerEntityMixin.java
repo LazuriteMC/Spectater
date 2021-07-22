@@ -1,5 +1,6 @@
 package dev.lazurite.spectater.mixin;
 
+import dev.lazurite.spectater.mixin.access.IClientPlayerEntityMixin;
 import net.minecraft.client.network.ClientPlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -14,7 +15,7 @@ public abstract class ClientPlayerEntityMixin {
             target = "Lnet/minecraft/client/network/ClientPlayerEntity;isCamera()Z"
         )
     )
-    boolean isCamera(ClientPlayerEntity clientPlayerEntity) {
+    protected boolean isCamera(ClientPlayerEntity clientPlayerEntity) {
         return ((IClientPlayerEntityMixin) clientPlayerEntity).invokeIsCamera() || clientPlayerEntity.isSpectator();
     }
 }
