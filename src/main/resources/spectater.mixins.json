@@ -7,7 +7,7 @@
   ],
   "client": [
     "ClientPlayerEntityMixin",
-    "access.IClientPlayerEntityMixin"
+    "access.ILocalPlayerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

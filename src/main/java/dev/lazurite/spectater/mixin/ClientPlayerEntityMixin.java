@@ -1,21 +1,21 @@
 package dev.lazurite.spectater.mixin;
 
-import dev.lazurite.spectater.mixin.access.IClientPlayerEntityMixin;
-import net.minecraft.client.network.ClientPlayerEntity;
+import dev.lazurite.spectater.mixin.access.ILocalPlayerMixin;
+import net.minecraft.client.player.LocalPlayer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-@Mixin(ClientPlayerEntity.class)
+@Mixin(LocalPlayer.class)
 public abstract class ClientPlayerEntityMixin {
     @Redirect(
-        method = "sendMovementPackets",
+        method = "sendPosition",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/client/network/ClientPlayerEntity;isCamera()Z"
+            target = "Lnet/minecraft/client/player/LocalPlayer;isControlledCamera()Z"
         )
     )
-    protected boolean isCamera(ClientPlayerEntity clientPlayerEntity) {
-        return ((IClientPlayerEntityMixin) clientPlayerEntity).invokeIsCamera() || clientPlayerEntity.isSpectator();
+    protected boolean isCamera(LocalPlayer localPlayer) {
+        return ((ILocalPlayerMixin) localPlayer).invokeIsControlledCamera() || localPlayer.isSpectator();
     }
 }
