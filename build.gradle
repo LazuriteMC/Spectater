@@ -1,8 +1,8 @@
 plugins {
-    id 'fabric-loom' version '0.11-SNAPSHOT'
+    id 'fabric-loom' version '0.12-SNAPSHOT'
 }
 
-group = 'dev.lazurite'
+group 'dev.lazurite'
 version spectater_version
 
 dependencies {
@@ -11,7 +11,16 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:$fabric_loader_version"
 }
 
-processResources {
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of 17
+    withSourcesJar()
+}
+
+jar {
+    from 'LICENSE'
+}
+
+tasks.withType(ProcessResources) {
     inputs.properties(
             'version': project.version,
             'min_minecraft_version': min_minecraft_version,
@@ -25,13 +34,4 @@ processResources {
                 'min_fabric_loader_version': min_fabric_loader_version
         )
     }
-}
-
-java {
-    toolchain.languageVersion = JavaLanguageVersion.of 17
-    withSourcesJar()
-}
-
-jar {
-    from 'LICENSE'
 }
